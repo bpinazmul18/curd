@@ -2,9 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Link } from "react-router-dom";
 import { Route, Switch } from "react-router";
-import { GamesPage } from "./GamesPage";
-import { Errors } from "./Errors";
-// import { Posts } from "./Posts";
+import GamesPage from "./GamesPage";
+// import { Errors } from "./Errors";
+import { Posts } from "./Posts";
 
 function App() {
   return (
@@ -17,13 +17,13 @@ function App() {
         <Link className="link" to="games">
           Games
         </Link>
-        {/*<Link className="link" to="posts">*/}
-        {/*  Posts*/}
-        {/*</Link>*/}
+        <Link className="link" to="posts">
+          Posts
+        </Link>
         <Switch>
           <Route exact path="/games" component={GamesPage} />
-          {/*<Route exact path="/posts" component={Posts} />*/}
-          <Route exact component={Errors} />
+          <Route exact path="/posts" component={Posts} />
+          {/*<Route exact component={Errors} />*/}
         </Switch>
       </section>
     </div>

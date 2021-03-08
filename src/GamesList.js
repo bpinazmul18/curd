@@ -1,3 +1,12 @@
-export default function GamesList() {
-  return alert("hi");
+import React from "react";
+import PropTypes from "prop-types";
+
+export default function GamesList({ games }) {
+  console.log("Games List", games);
+  const emptyMessage = <p>There are no games yet in your collection</p>;
+  const gamesList = <p>games list</p>;
+  return <div>{games.length === 0 ? emptyMessage : gamesList}</div>;
 }
+GamesList.propTypes = {
+  games: PropTypes.array.isRequired,
+};
